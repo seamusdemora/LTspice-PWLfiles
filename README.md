@@ -8,7 +8,11 @@ Conceptually, my mousetrap was simple, and not even innovative: Capture contact 
 
 Once I exported the first data file from the oscilloscope, I realized constructing the PWL file would be more challenging than it seemed at first. From the scope's *export menu* I chose the CSV format; a short time later I had a 277MB file with 10 million data points (voltage v. time) at a 0.2 nano-second intervals. Far more data than needed; far more data than LTspice could handle.
 
-Here's a [rather large CSV file](https://drive.google.com/file/d/14TgyNHGOWcfiwsI2c3uICQXNFt6SBPWj/view?usp=sharing) containing all the data points (volt vs time) for the contact bounce measurement #7: CB07.
+Here's the [rather large CSV file](https://drive.google.com/file/d/14TgyNHGOWcfiwsI2c3uICQXNFt6SBPWj/view?usp=sharing) containing all the data points (volt vs time) for the contact bounce measurement #7: CB07. 
+
+And so, here's the challenge: ***How to create a small-ish PWL file for LTspice from a 277MB CSV file downloaded from the oscilloscope?***     [***TO BE CONTINUED***]
+
+
 
 | 1. Scope Measurement Screenshot | 2. Scope Measurement Screenshot & Comments |
 | -------------------------- | -------------------------- |
