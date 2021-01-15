@@ -6,17 +6,17 @@ The LTspice documentation provides information on methods for creating a PWL fil
 
 Conceptually, my mousetrap was simple, and not even innovative: Capture contact bounce on an oscilloscope, and ***export*** the waveform data to PWL data format. I had a few manual toggle switches on hand, and so I set up [my scope](https://www.keysight.com/en/pdx-x201760-pn-MSO9104A/mixed-signal-oscilloscope-1-ghz-4-analog-plus-16-digital-channels?nid=-32534.1150138&cc=US&lc=eng&pm=ov) to capture the bounce. It wasn't difficult to set up the measurement (here's a file exported from the scope detailing my setup), and soon I was capturing all sorts of [*random* waveforms](https://imgur.com/a/JcRDZ7k). It was fascinating to see how much variance existed in each closure of the same switch! 
 
-Once I exported the first data file from the oscilloscope, I realized constructing the PWL file would be more challenging than it seemed at first. From the scope's *export menu* I chose the CSV format; a short time later I had a 277MB file with 10 million data points (voltage v. time) at a 0.2 nano-second intervals. Far more data than needed; far more data than LTspice could handle.
+| 1. Scope Measurement Screenshot | 2. Scope Measurement Screenshot & Comments |
+| -------------------------- | -------------------------- |
+<img src="pix/ContactBounce07.png" alt="Scope Measurement Screenshot, Contact Bounce Measurement 7" width="480">|<img src="pix/ContactBounce07-Comments.png" alt="Scope Measurement Screenshot w/Cmts, CB07" width="480">
 
-Here's the [rather large CSV file](https://drive.google.com/file/d/14TgyNHGOWcfiwsI2c3uICQXNFt6SBPWj/view?usp=sharing) containing all the data points (volt vs time) for the contact bounce measurement #7: CB07. 
+Once I exported the first data file from the oscilloscope, I realized constructing the PWL file would be more challenging than it seemed at first. From the scope's *export menu* I chose the CSV format. A short time later I had a 277MB file with 10 million data points (voltage vs time) at 0.2 nanosecond intervals. This was far more data than needed, and far more data than LTspice could handle on my Mac<sup id="a1">[Note 1](#f1)</sup>. Here's the [rather large CSV file](https://drive.google.com/file/d/14TgyNHGOWcfiwsI2c3uICQXNFt6SBPWj/view?usp=sharing) containing all the data points for the contact bounce measurement #7 pictured in the screenshot above (CB07).  
 
 And so, here's the challenge: ***How to create a small-ish PWL file for LTspice from a 277MB CSV file downloaded from the oscilloscope?***     [***TO BE CONTINUED***]
 
 
 
-| 1. Scope Measurement Screenshot | 2. Scope Measurement Screenshot & Comments |
-| -------------------------- | -------------------------- |
-<img src="pix/ContactBounce07.png" alt="Scope Measurement Screenshot, Contact Bounce Measurement 7" width="520">|<img src="pix/ContactBounce07-Comments.png" alt="Scope Measurement Screenshot w/Cmts, CB07" width="520">
+
 
 
 
@@ -24,7 +24,12 @@ And so, here's the challenge: ***How to create a small-ish PWL file for LTspice 
 
 ---
 
-## References, Resources & Further Reading 
+## Notes: 
+
+   * <b id="f1">Note 1 : </b>In response to a query re size limits on PWL files, an Analog Devices support engineer has suggested that 500K data points is a practical limit. [↩](#a1) 
+
+
+## References, Resources & Further Reading
 
 1. [Max Maxfield's 9-part saga on debouncing, which includes both hardware **and** software solutions](https://www.eejournal.com/article/ultimate-guide-to-switch-debounce-part-5/) 
 2. [Jack Ganssle's 2-part article, which also offers a hardware & software solutions](http://www.ganssle.com/debouncing-pt2.htm)  
