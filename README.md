@@ -12,9 +12,30 @@ Conceptually, my mousetrap was simple, and not even innovative: Capture contact 
 
 Once I exported the first data file from the oscilloscope, I realized constructing the PWL file would be more challenging than it seemed at first. From the scope's *export menu* I chose the CSV format. A short time later I had a 277MB file with 10 million data points (voltage vs time) at 0.2 nanosecond intervals. This was far more data than needed, and far more data than LTspice could handle on my Mac<sup id="a1">[Note 1](#f1)</sup>. Here's the [rather large CSV file](https://drive.google.com/file/d/14TgyNHGOWcfiwsI2c3uICQXNFt6SBPWj/view?usp=sharing) containing all the data points for the contact bounce measurement #7 pictured in the screenshot above (CB07).  
 
-And so, here's the challenge: ***How to create a small-ish PWL file for LTspice from a 277MB CSV file downloaded from the oscilloscope?***     [***TO BE CONTINUED***]
+And so, here's the challenge: ***How to create a small-ish PWL file for LTspice from a 277MB CSV file downloaded from the oscilloscope?*** 
 
+ [`awk`](https://en.wikipedia.org/wiki/AWK) seemed a good choice, but after struggling a couple of days, I [called for help](https://unix.stackexchange.com/questions/627800/can-awk-sum-a-column-over-a-specified-number-of-lines) - promptly answered with a  functional, well-written block of code. I've hacked it a bit based on things learned since then, and likely to continue - the latest is listed in the repo above. 
 
+The format for a PWL file is illustrated below:
+
+```
+Col. 1   Col. 2
+time     voltage 
+0.0      0.0
+2.0E-06  0.0
+2.01E-06 1.9
+2.02E-06 3.3
+8.0E-06  3.3
+9.0E-06  0.0
+20.E-06  0.0
+22.E-06  1.8
+24.E-06  3.3
+36.E-06  3.3
+37.E-06  0.0
+50.E-06  0.0
+```
+
+LTspice can read values in scientific notation or floating point, and one or more spaces serve to separate the time value from the voltage (or current) value. LTspice will interpret the data points as a *waveform*, and can display them in the *Waveform Viewer*: 
 
 
 
