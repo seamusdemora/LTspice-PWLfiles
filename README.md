@@ -71,12 +71,12 @@ comet@raspberrypi:~/LTspice-PWLfiles $ cat oscillo_src.csv
 2.50E-05,11.400E+00
 ```
 
-* thin-pw1.awk (new) `AWK script` generate pwl file
+# thin-pw1.awk (new) `AWK script` generate pwl file
 
- Description of `AWK scripts`:
+* Description of `AWK scripts`:
 
-* The thin-pwl0.awk script use a `data rounding logic` and it is developed by origin author seamusdemora - Reference #11 .
-* The thin-pwl1.awk script use a `duplicates elimination logic` for transformation signal.
+  - The thin-pwl0.awk script use a `data rounding logic` and it is developed by origin author seamusdemora - Reference #11 .
+  - The thin-pwl1.awk script use a `duplicates elimination logic` for transformation signal.
 
 Note:
 In example directory you find files that you use for transformation proces from oscilloscope source file to final LTspice PWL file.
@@ -91,6 +91,9 @@ comet@raspberrypi:~/LTspice-PWLfiles $ awk -f ./thin-pwl1.awk ./example/oscillo_
 ![compare_conversion_strategy](https://user-images.githubusercontent.com/26118162/213135139-fff3cfd5-2058-4b41-9bdb-b3db7b420ec5.PNG)
 
 Green line (logic thin-pwl0.awk), blue line (logic thin-pwl1.awk)
+
+* Use PWL file in LTSpice application
+![LTSpice](https://user-images.githubusercontent.com/26118162/213154897-1df16673-ebb4-4f65-8f61-645b3de88a49.jpg)
 
 ## References, Resources & Further Reading
 
