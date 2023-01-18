@@ -84,8 +84,8 @@ In example directory you find files that you use for transformation proces from 
 commands:
 
 ```ps
-comet@raspberrypi:~/LTspice-PWLfiles $ awk -f ./thin-pwl0.awk ./oscillo_src.csv > ./oscillo_0.pwl
-comet@raspberrypi:~/LTspice-PWLfiles $ awk -f ./thin-pwl1.awk ./oscillo_src.csv > ./oscillo_1.pwl
+comet@raspberrypi:~/LTspice-PWLfiles $ awk -f ./thin-pwl0.awk ./example/oscillo_src.csv > ./example/oscillo_0.pwl
+comet@raspberrypi:~/LTspice-PWLfiles $ awk -f ./thin-pwl1.awk ./example/oscillo_src.csv > ./example/oscillo_1.pwl
 ```
 
 ![compare_conversion_strategy](https://user-images.githubusercontent.com/26118162/213135139-fff3cfd5-2058-4b41-9bdb-b3db7b420ec5.PNG)
