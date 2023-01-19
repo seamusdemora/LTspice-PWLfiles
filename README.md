@@ -71,7 +71,7 @@ comet@raspberrypi:~/LTspice-PWLfiles $ cat oscillo_src.csv
 2.50E-05,11.400E+00
 ```
 
-# thin-pw1.awk (new) `AWK script` generate pwl file
+thin-pw1.awk (new) `AWK script` generate pwl file
 
 * Description of `AWK scripts`:
 
